@@ -142,10 +142,12 @@ form{
     width: 25vw;
     height: 25vh;
 }
+
 .details{
-    padding: 2.5em  3em;
     position: relative;
     bottom:2.5rem;
+    display:flex;
+    justify-content: center;
 }
 
 .filter{
