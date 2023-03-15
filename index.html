@@ -60,8 +60,8 @@
         </div>
       </nav>
     </div>
-    <header>
-        <div id="carouselExample" class="carousel slide ">
+    <header> 
+        <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner h-100">
               <div class="carousel-item active" style="background-image: url(./assets/1.png);">
                 <div class="row">
@@ -99,19 +99,24 @@
                 </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev"> 
+              <a href="./stats.html"></a>
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden"> Previous</span>
+              </a>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+              <a href="./upcomingEvents.html">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </a>
+            </button> 
           </div>
+          
     </header>
     <main>
       <fieldset>
-        <div class="category d-flex flex-wrap justify-content-center">
+        <div class="category d-flex flex-wrap justify-content-center" id="checkContainer">
           <div class="d-inline-flex p-2 flex-wrap">
             <div class="p-3 g-col-6 z-1">
               <input type="checkbox" name="categ">
@@ -138,103 +143,29 @@
                 <div class="container-fluid">
                   <form class="d-flex" role="search">
                     <input
+                      id="search-box"
                       class="form-control me-2"
-                      type="search"
+                      type="text"
                       placeholder="Search"
-                      aria-label="Search">
+                      aria-label="Search"
+                      oninput="searchFunction()">
                     <button class="btn btn-outline-dark" type="submit">
                       Search
                     </button>
                   </form>
                 </div>
               </nav>
+              <div id="results">
+                <!-- Aquí van los resultados de búsqueda -->
+              </div>
             </div>
           </div>
         </div>
       </fieldset>
       <!-- Cards  -->
-      <div class="cards d-flex flex-wrap justify-content-center gap-4">
-        <div class="card p-3" style="width: 18rem;">
-          <img src="./assets/Cinema.jpg" class="card-img-top" alt="cinema">
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-          <div class="botton"></div>
-          <a class="btn btn-warning" href="./details.html" role="button">Details</a>
-        </div>
-        <div class="card p-3" style="width: 18rem;">
-          <img
-            src="./assets/Costume_Party.jpg"
-            class="card-img-top"
-            alt="costume_party">
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-          <div class="botton"></div>
-          <a class="btn btn-warning" href="./details.html" role="button">Details</a>
-        </div>
-        <div class="card p-3" style="width: 18rem;">
-          <img
-            src="./assets/Food_Fair.jpg"
-            class="card-img-top"
-            alt="food_fair">
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-          <div class="botton"></div>
-          <a class="btn btn-warning" href="./details.html" role="button">Details</a>
-        </div>
-        <div class="card p-3" style="width: 18rem;">
-          <img
-            src="./assets/Marathon.jpg"
-            class="card-img-top"
-            alt="marathon">
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-          <div class="botton"></div>
-          <a class="btn btn-warning" href="./details.html" role="button">Details</a>
-        </div>
-        <div class="card p-3" style="width: 18rem;">
-          <img
-            src="./assets/Museum_Tour.jpg"
-            class="card-img-top"
-            alt="museum">
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-          <div class="botton"></div>
-          <a class="btn btn-warning" href="./details.html" role="button">Details</a>
-        </div>
-        <div class="card p-3" style="width: 18rem;">
-          <img
-            src="./assets/Music_Concert.jpg"
-            class="card-img-top"
-            alt="music_concert">
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-          <div class="botton"></div>
-          <a class="btn btn-warning" href="./details.html" role="button">Details</a>
-        </div>
+      <div class="cards d-flex flex-wrap justify-content-center gap-4 " id = "cards">
+       
+        
       </div>
     </main>
     <footer>
@@ -291,7 +222,8 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous" 
     ></script>
+    <script type="module" src="./JS/functions.js"></script>
     <script type = "module" src="./JS/amazing.js"></script>
-    <script type="module" src="./JS/index.js"></script>
+    <script type = "module" src="./JS/index.js"></script>
   </body>
 </html>
