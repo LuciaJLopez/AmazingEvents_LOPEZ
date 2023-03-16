@@ -116,7 +116,7 @@
     </header>
     <main>
       <fieldset>
-        <div class="category d-flex flex-wrap justify-content-center" id="checkContainer">
+        <div class="category d-flex flex-wrap justify-content-center" id="checkContainer" >
           <div class="d-inline-flex p-2 flex-wrap">
             <div class="p-3 g-col-6 z-1">
               <input type="checkbox" name="categ">
@@ -138,28 +138,23 @@
               <input type="checkbox" name="categ">
               <label>Museum Tour</label>
             </div>
-            <div class="d-inline-flex flex-wrap" id="search">
-              <nav class="navbar">
-                <div class="container-fluid">
-                  <form class="d-flex" role="search">
-                    <input
-                      id="search-box"
-                      class="form-control me-2"
-                      type="text"
-                      placeholder="Search"
-                      aria-label="Search"
-                      oninput="searchFunction()">
-                    <button class="btn btn-outline-dark" type="submit">
-                      Search
-                    </button>
-                  </form>
-                </div>
-              </nav>
-              <div id="results">
-                <!-- Aquí van los resultados de búsqueda -->
-              </div>
-            </div>
           </div>
+        </div>
+        <div class="d-inline-flex flex-wrap" id="search">
+          <nav class="navbar">
+            <div class="container-fluid">
+              <form class="d-flex searchForm" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search">
+                <button class="btn btn-outline-dark" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+          </nav>
         </div>
       </fieldset>
       <!-- Cards  -->

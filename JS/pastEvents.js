@@ -17,7 +17,7 @@ console.log(pastEvents(data.events,container))
 
 function creatCards(array,container){
   let fragment = document.createDocumentFragment();
-  
+  container.innerHTML = '';
   for(let item of array){
     let div = document.createElement('div')
     div.classList = 'card p-3'
@@ -41,6 +41,7 @@ container.appendChild(fragment)
 let array = pastEvents()
 let card = creatCards(array,container)
 
+//----------------------------------------------------------------------------
 
 
 

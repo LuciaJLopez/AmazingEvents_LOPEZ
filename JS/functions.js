@@ -1,4 +1,3 @@
-
 /*
 function pastEvents(myData){
     let arrayAux = [];
@@ -14,7 +13,7 @@ function futureEvents(myData){
     return arrayAux;
 }
 
-function creatCards(array,container){
+export function creatCards(array,container){
     let fragment = document.createDocumentFragment();
     
     for(let item of array){
