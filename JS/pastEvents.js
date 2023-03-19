@@ -1,48 +1,40 @@
 import data from "./amazing.js"
-//import {pastEvents} from "./functions.js";
+import {creatCards, pastEvents, createChecks, textFilter,categFilter} from "./functions.js";
 
-const container = document.getElementById('past-cards');
+console.log(pastEvents(data))
+let container = document.getElementById('cards');
 
-function pastEvents(){
-  let arraypastEvents = [];
-  for (let i = 0; i < data.events.length; i++){
-    if (data.events[i].date > data.currentDate){
-      arraypastEvents.push(data.events[i]);
-    }
-  } 
-  return arraypastEvents;
-}
+creatCards(pastEvents(data),container)
 
-console.log(pastEvents(data.events,container))
+//Crea categorias dinamicas
 
-function creatCards(array,container){
-  let fragment = document.createDocumentFragment();
-  container.innerHTML = '';
-  for(let item of array){
-    let div = document.createElement('div')
-    div.classList = 'card p-3'
-    div.style = 'width: 18rem;'
-    div.innerHTML = `<img src="${item.image}" class="card-img-top" alt="cinema">
-    <div class="card-body">
-    <h5 class="card-title">${item.name}</h5>
-    <p class="card-text">
-    ${item.description}
-    </p>
-    </div>
-    <div class="botton">
-    <a class="btn btn-warning" href="./details.html" role="button">Details</a>
-    </div>`
-    fragment.appendChild(div)
-    
-  }
-container.appendChild(fragment)
-}
+const checkContainer = document.getElementById('checkContainer');
 
-let array = pastEvents()
-let card = creatCards(array,container)
+//Crea las categorias de los checkbox
 
-//----------------------------------------------------------------------------
+const containerCheck = document.getElementById('checkContainer')
 
+createChecks(pastEvents(data),container);
+
+//Funcion que busca por texto
+
+const input = document.querySelector('.searchForm > input');
+
+//Busca texto
+
+input.addEventListener('input',()=>{
+  let textfiltered = textFilter(data.events, input.value);
+  let categFiltered = categFilter(textfiltered)
+  creatCards(categFiltered,container);
+})
+
+//funcion que filtra las categorias en checkboxes
+
+containerCheck.addEventListener('change',()=>{
+  let textfiltered = textFilter(data.events, input.value);
+  let categFiltered = categFilter(textfiltered)
+  creatCards(categFiltered, container);
+})
 
 
 
