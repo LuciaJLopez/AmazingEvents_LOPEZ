@@ -4,16 +4,13 @@
      arrayAux = myData.events.filter(myEvent => Date.parse(myEvent.date) < Date.parse(myData.currentDate));
      return arrayAux;
  }
-
 function futureEvents(myData){
      let arrayAux = [];
      //filter(nombreElemento => Condición de filtrado)
      arrayAux = myData.events.filter(myEvent => Date.parse(myEvent.date) > Date.parse(myData.currentDate));
      return arrayAux;
  }
-
 //Function to create cards
-
  function creatCards(array,container){
   container.innerHTML = '';
   let fragment = document.createDocumentFragment();
@@ -33,9 +30,7 @@ function futureEvents(myData){
   })
   container.appendChild(fragment)
 }
-
 //Funtion to create checkbox
-
 function createChecks(array) {
   let arrayCateg = array.map(event => event.category);
   let setCateg = new Set(arrayCateg)
@@ -53,17 +48,12 @@ function createChecks(array) {
   });
   checkContainer.innerHTML = checkboxes;
 }
-
-//Function que busca por texto
-
+//Function that searches by text
 function textFilter(array, name){
-  //container.innerHTML = '';
   let arrFiltered = array.filter(elemento => elemento.name.toLowerCase().includes(name.toLowerCase()))
   return arrFiltered
-  //creatCards(arrFiltered, container);
 }
-
-//funcion que filtra las categorias en checkboxes
+//function that filters the categories in checkboxes
 function categFilter(eventosCateg){
   let checkboxes = document.querySelectorAll("input[type='checkbox']")
   let arrChecksCategValues = Array.from(checkboxes)
@@ -76,5 +66,4 @@ function categFilter(eventosCateg){
   return eventosCateg;
  
 }
-
 export {creatCards,pastEvents, futureEvents, createChecks, textFilter, categFilter};

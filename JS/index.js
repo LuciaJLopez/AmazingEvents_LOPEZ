@@ -1,11 +1,6 @@
 //import data from "./amazing.js";
 import {creatCards,createChecks,textFilter, categFilter} from "./functions.js";
-
 const container = document.getElementById('cards');
-
-//-----------------------------------------------------
-//task4
-
 async function inicial(){
   await fetch('./amazing.json')
   .then(response => response.json())
@@ -27,34 +22,10 @@ async function inicial(){
   }).catch (err => console.error(err))
 }
 inicial();
-
-//-----------------------------------------------------------
-
-//Crea categorias dinamicas
-
+//Create dynamic categories
 const checkContainer = document.getElementById('checkContainer');
-
-//Crea las categorias de los checkbox
-
-const containerCheck = document.getElementById('checkContainer')
-
-//!createChecks(data.events);
-
-//Funcion que busca por texto
-
+//Create checkbox categories
+const containerCheck = document.getElementById('checkContainer');
+//Function that searches by text
 const input = document.querySelector('.searchForm > input');
-
-// input.addEventListener('input',()=>{
-//   let textfiltered = textFilter(data.events, input.value);
-//   let categFiltered = categFilter(textfiltered)
-//   creatCards(categFiltered,container);
-// })
-
-//funcion que filtra las categorias en checkboxes
-
-// containerCheck.addEventListener('change',()=>{
-//   let textfiltered = textFilter(data.events, input.value);
-//   let categFiltered = categFilter(textfiltered)
-//   creatCards(categFiltered, container);
-// })
 
