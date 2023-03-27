@@ -7,37 +7,34 @@
 
 function futureEvents(myData){
      let arrayAux = [];
-     //filter(nombreElemento => Consicion de filtrado)
+     //filter(nombreElemento => Condición de filtrado)
      arrayAux = myData.events.filter(myEvent => Date.parse(myEvent.date) > Date.parse(myData.currentDate));
      return arrayAux;
  }
 
+//Function to create cards
 
-function creatCards(array,container){
-  let fragment = document.createDocumentFragment();
+ function creatCards(array,container){
   container.innerHTML = '';
-  for(let item of array){
+  let fragment = document.createDocumentFragment();
+  array.forEach(item => {
     let div = document.createElement('div')
     div.classList = 'card p-3'
     div.style = 'width: 18rem;'
     div.innerHTML = `<img src="${item.image}" class="card-img-top" alt="cinema">
     <div class="card-body">
     <h5 class="card-title">${item.name}</h5>
-    <p class="card-text">
-    ${item.description}
-    </p>
+    <p class="card-text">${item.description}</p>
     </div>
     <div class="botton">
     <a class="btn btn-warning" href="./details.html?id=${item._id}" role="button">Details</a>
     </div>`
     fragment.appendChild(div)
-    
-  }
-container.appendChild(fragment)
+  })
+  container.appendChild(fragment)
 }
 
-
-//Funtion para creat checkbox
+//Funtion to create checkbox
 
 function createChecks(array) {
   let arrayCateg = array.map(event => event.category);
@@ -46,7 +43,6 @@ function createChecks(array) {
   let checkboxes = '';
   arrChecks.forEach(category => {
     checkboxes += `
-    
     <div class="d-inline-flex p-2 flex-wrap">
     <div class="p-3 g-col-6 z-1">
     <input type="checkbox" name="${category}" value="${category}">

@@ -20,19 +20,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                      <a class="nav-link" href="index.html">Home</a>
+                      <a class="nav-link" href="index.html" id="one">Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="upcomingEvents.html">Upcoming Events</a>
+                      <a class="nav-link" href="upcomingEvents.html" id="two">Upcoming Events</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="pastEvents.html">Past Events</a>
+                      <a class="nav-link" href="pastEvents.html" id="three">Past Events</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link active text-light" aria-current="page" href="#">Contact</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="stats.html">Stats</a>
+                      <a class="nav-link" href="stats.html" id="four">Stats</a>
                     </li>
                   </ul>
             </div>    
@@ -78,15 +78,15 @@
                     </div>
                   </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
+                <a class="carousel-control-prev" role="button" href="./pastEvents.html"  data-bs-slide="prev"> 
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <!-- <span class="visually-hidden"></span> -->
+                </a>
+                <a class="carousel-control-next" role="button" href="./stats.html" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                 </a> 
+            </div>
     </header>
     <main>
         <div class="form d-flex justify-content-center flex-wrap">

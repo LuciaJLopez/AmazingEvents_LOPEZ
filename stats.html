@@ -20,16 +20,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                      <a class="nav-link" href="index.html">Home</a>
+                      <a class="nav-link" href="index.html" id="one">Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="upcomingEvents.html">Upcoming Events</a>
+                      <a class="nav-link" href="upcomingEvents.html" id="two">Upcoming Events</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="pastEvents.html">Past Events</a>
+                      <a class="nav-link" href="pastEvents.html" id="three">Past Events</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="contact.html">Contact</a>
+                      <a class="nav-link" href="contact.html" id="four">Contact</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link active text-light" aria-current="page" href="#">Stats</a>
@@ -78,72 +78,64 @@
                 </div>
               </div> 
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+            <a class="carousel-control-prev" role="button" href="./contact.html"  data-bs-slide="prev"> 
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden"></span>
+            </a>
+            <a class="carousel-control-next" role="button" href="./index.html" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a> 
+        </div>
     </header>
     <main class="table d-flex justify-content-center">
-        <div class="tables">
-            <table class="table m-5">
-                <thead class="table-dark">
+        <div class="tables justify-content-center">
+            <table class="table m-5" style="table-layout: fixed; width: 100%;" >
+                <thead>
                     <tr>
                         <th>Events statistics</th>
                         <th></th>
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Events with the highest percentage of attendance</td>
-                        <td>Events with the lowest percenage of attendance</td>
-                        <td>Event with larger capacity</td>
+                <tbody id="tbody1">
+                    <tr class="fw-bold">
+                        <td style="width: 33%;">Events with the highest percentage of attendance</td>
+                        <td style="width: 33%;">Events with the lowest percenage of attendance</td>
+                        <td style="width: 33%;">Event with larger capacity</td>
                     </tr>
-                   <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                   </tr> 
-                   <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                   </tr> 
+                    <tr id="most-attended-col" >
+                        <td id="first-column" style="width: 33%;"></td>    
+                        <td id="second-column" style="width: 33%;"></td>
+                        <td id="third-column" style="width: 33%;"></td>
+                    </tr>
                 </tbody>
               </table>
               <table class="table m-5">
-                <thead class="table-dark">
+                <thead>
                     <tr>
                         <th>Upcoming events statistics by category</th>
                         <th></th>
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody2">
                     <tr>
-                        <td>Categories</td>
-                        <td>Revenues</td>
-                        <td>Percentage of attendance</td>
+                        <td class="fw-bold" style="width: 33%;">Categories</td>
+                        <td class="fw-bold" style="width: 33%;">Revenues</td>
+                        <td class="fw-bold" style="width: 33%;">Percentage of attendance</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                       </tr> 
-                       <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr> 
+                        <tr id="most-attended-col2" >
+                            <td id="first-column2"></td>    
+                            <td id="second-column2"></td>
+                            <td id="third-column2"></td>
+                        </tr>
+                    </tr>  
                 </tbody>
               </table>
               <table class="table m-5">
-                <thead class="table-dark">
+                <thead>
                     <tr>
                         <th>Past Events statistic by category</th>
                         <th></th>
@@ -152,27 +144,22 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Categories</td>
-                        <td>Revenues</td>
-                        <td>Percentage of attendance</td>
+                        <td class="fw-bold" style="width: 33%;">Categories</td>
+                        <td class="fw-bold" style="width: 33%;">Revenues</td>
+                        <td class="fw-bold" style="width: 33%;">Percentage of attendance</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                       </tr> 
-                       <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                       </tr> 
+                        <tr id="most-attended-col3" >
+                            <td id="first-column3"></td>    
+                            <td id="second-column3"></td>
+                            <td id="third-column3"></td>
+                        </tr>
+                    </tr>
                 </tbody>
               </table>
-
         </div>
     </main>
     <footer>
-        <!-- footer cambiado -->
         <div class="footer" style="height: 10rem;">
             <div class="icons d-flex d-inline-flex gap-3 p-5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"  class="bi bi-instagram" viewBox="0 0 16 16">
@@ -195,5 +182,6 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script type = "module" src="./JS/stats.js"></script>
 </body>
 </html>
