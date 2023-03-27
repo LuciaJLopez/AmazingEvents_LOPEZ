@@ -4,19 +4,21 @@ async function inicial(){
   try{
     const response = await fetch('./amazing.json');
     const data = await response.json();
+    //first table
     let mostAttendedEvents = findMostAttendedEvents(data.events);
     let lowerAttendedEvents = findLowerAttendedEvents(data.events);
     let maxCapacityEvents = mostrarEventosMasCapacidad(data.events);
     // second table
     let futureEventsList = futureEvents(data);
     let revenuesForFutureEvents = calculateRevenuesForFutureEvents(futureEventsList);
+    let percentageFutureEvents = calculateFutureAttendadedPercentageByCategory(data);
     //third table
     let pastEventsList = pastEvents(data);
     let revenuesForPastEvents = calculateRevenuesForPastEvents(pastEventsList);
     //console.log(revenuesForPastEvents)
-    let categories = countEventsByCategory(data.events);
     let percentagePastEvents = calculatePastAttendadedPercentageByCategory(data);
-    let percentageFutureEvents = calculateFutureAttendadedPercentageByCategory(data);
+    let categories = countEventsByCategory(data.events);
+    
 
     mostAttendedEvents.forEach(event => {
       let tr = document.createElement('tr');
@@ -162,12 +164,13 @@ function calculateFutureAttendadedPercentageByCategory(myData) {
   revenuesByCategory.forEach(revenue => {
     let category = revenue.category;
     let totalAssistance = futureEventsList.filter(event => event.category === category)
-      .reduce((total,event) => total + event.assistance, 0);
-      console.log(totalAssistance)
+      .reduce((total,event) => total + (isNaN(event.estimate) ? 0 : event.estimate), 0);    
     let capacity = futureEventsList.filter(event => event.category === category)
       .reduce((cap,event) => cap + event.capacity, 0);
-    let percentage = (capacity !== 0) ? ((totalAssistance / capacity) * 100).toFixed(2) : 0;
+      console.log(capacity)
+    let percentage = ((totalAssistance / capacity) * 100).toFixed(2);
     percentageByCategoryFuture[category] = percentage;
+    console.log(percentage)
   });
   return percentageByCategoryFuture;
 }
@@ -187,4 +190,3 @@ function calculatePastAttendadedPercentageByCategory(myData) {
   });
   return percentageByCategory;
 }
-
