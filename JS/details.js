@@ -17,12 +17,16 @@ function drawCards(event, container){
   container.innerHTML=`
  <div class="card" style="width: 18rem;">        
  <img src="${event.image}" class="card-img-top" alt="${event.name}">
-<div class="card-body">        <h5 class="card-title fw-bold">${event.name}</h5>
+     <div class="card-body">        
+        <h5 class="card-title fw-bold">${event.name}</h5>
         <p class="card-text">${event.description}</p>
         <p class="card-text fw-bold">Date: ${event.date}</p>
         <p class="card-text fw-bold">Place: ${event.place}</p>
         <p class="card-text fw-bold">Category: ${event.category}</p>
       <h8 class="fw-bold">Price: $${event.price}</h8>
+      </div>
+      <div class="botton">
+        <a class="btn btn-warning" role="button" onclick="window.history.back();">Go Back</a>
       </div>
 </div>`;
 }

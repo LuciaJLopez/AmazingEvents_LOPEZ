@@ -101,6 +101,7 @@ label{
 .botton{
     display:flex;
     justify-content:center;  
+    padding-bottom: 1rem;
 }
 .footer{
     background-color: #fc7cba;
